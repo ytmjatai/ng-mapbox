@@ -27,6 +27,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@ionic/angular/css/ionic.bundle.css",
               "node_modules/mapbox-gl/dist/mapbox-gl.css",
               "src/styles.scss"
             ],

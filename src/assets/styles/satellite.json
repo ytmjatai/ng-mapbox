@@ -1,0 +1,80 @@
+{
+  "version": 8,
+  "name": "ESRI卫星",
+  "center": [113.307649675, 23.1200491021],
+  "zoom": 8,
+  "pitch": 0,
+  "bearing": 0,
+  "light": {
+    "anchor": "viewport",
+    "color": "white",
+    "intensity": 1
+  },
+  "metadata": {
+    "mapbox:groups": {
+      "raster": {
+        "title": "影像",
+        "collapsed": true
+      },
+      "dem": {
+        "title": "地形",
+        "collapsed": true
+      }
+    }
+  },
+  "sprite": "https://app.gdep.gov.cn/arcgis-js-api/mapbox/sprites/satellite-streets/sprite",
+  "glyphs": "https://app.gdep.gov.cn/arcgis-js-api/mapbox/glyphs/{fontstack}/{range}.pbf",
+  "sources": {
+    "satellite": {
+      "type": "raster",
+      "scheme": "xyz",
+      "tiles": [
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+      ],
+      "bounds": [ 0, -90, 180, 90 ],
+      "minzoom": 0,
+      "maxzoom": 23,
+      "tileSize": 256
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "metadata": {
+        "title": "背景"
+      },
+      "type": "background",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "background-opacity": 1.0,
+        "background-color": "#000000"
+      }
+    },
+    {
+      "id": "satellite",
+      "metadata": {
+        "mapbox:group": "raster",
+        "title": "影像图",
+        "type": "base"
+      },
+      "type": "raster",
+      "source": "satellite",
+      "minzoom": 0,
+      "maxzoom": 23,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "raster-opacity": 1,
+        "raster-hue-rotate": 0,
+        "raster-brightness-min": 0,
+        "raster-brightness-max": 1,
+        "raster-saturation": 0,
+        "raster-contrast": 0,
+        "raster-fade-duration": 300
+      }
+    }
+  ]
+}

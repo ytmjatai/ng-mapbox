@@ -21,7 +21,7 @@ export class MapboxService {
       mgl.accessToken = environment.mapboxAccessToken;
       const map = new mapboxgl.Map({
         container: element,
-        style: './assets/styles/light-v9.json',
+        style: './assets/styles/satellite.json',
         center: [113.18, 23.14],
         zoom: 6,
         attributionControl: false,

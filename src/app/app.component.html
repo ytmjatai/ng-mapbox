@@ -1,1 +1,30 @@
-<app-map></app-map>
+<ion-app>
+
+  <ion-menu>
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>主菜单</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item button (click)="navigate('/home')">
+            <ion-label>首页</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item button (click)="navigate('/map')">
+            <ion-label>地图</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
+
+</ion-app>
